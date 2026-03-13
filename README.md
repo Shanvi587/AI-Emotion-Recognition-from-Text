@@ -1,145 +1,207 @@
-AI Emotion Recognition from Text using NLP
+# AI Emotion Recognition from Text
 
-An AI-based system that detects human emotions from textual input using Natural Language Processing (NLP) and Machine Learning.
-The model predicts emotions such as joy, sadness, anger, and fear from sentences.
+## Author
+**Shanvi Tripathi**  
+B.Tech – Artificial Intelligence & Machine Learning  
+GitHub: https://github.com/Shanvi587  
 
-The system is trained on an emotion-labeled dataset and achieves ~60–90% accuracy depending on training data and preprocessing.
+---
 
-Architecture
+## Project Overview
 
-Text Processing Pipeline
+This project presents an **AI-based emotion recognition system** that analyzes textual input and predicts the emotional tone expressed in the text.
 
-Text Input
-   ↓
-Text Preprocessing
-   ↓
-TF-IDF Vectorization
-   ↓
-Multinomial Naive Bayes Classifier
-   ↓
-Emotion Prediction
+The system uses **Natural Language Processing (NLP)** and **Machine Learning techniques** to classify emotions such as:
 
-Model Components
+- Joy
+- Sadness
+- Anger
+- Fear
 
-TF-IDF Vectorizer – converts text to numerical features
+Emotion detection from text is widely used in applications such as:
 
-Multinomial Naive Bayes – classification algorithm
+- Sentiment analysis
+- Customer feedback analysis
+- Social media monitoring
+- Mental health analysis
 
-Train/Test Split – 80% training, 20% testing
+---
 
-Dataset
+## Dataset
 
-The model is trained on an Emotion Dataset containing thousands of labeled sentences.
+The model is trained using an **emotion-labeled dataset** containing text sentences with corresponding emotion labels.
 
-Example dataset entries:
+Example dataset entry:
+text ; emotion
+I feel very happy today ; joy
+I feel very sad today ; sadness
+This situation makes me angry ; anger
+I am scared of this situation ; fear
 
-i feel very happy today ; joy
-i feel lonely and sad ; sadness
-this situation makes me angry ; anger
-i am scared of this situation ; fear
+Dataset files used in the project:
 
-Emotion classes used in the model:
+- `train.txt` – Training dataset  
+- `test.txt` – Testing dataset  
+- `val.txt` – Validation dataset  
 
-Joy
+---
 
-Sadness
+## Project Architecture
 
-Anger
+The system follows this pipeline:
+Text Input → Text Preprocessing → TF-IDF Vectorization → Naive Bayes Model → Emotion Prediction
 
-Fear
+---
 
-Training Configuration
+## Methodology
 
-Algorithm: Multinomial Naive Bayes
+The project follows these steps:
 
-Feature Extraction: TF-IDF Vectorization
+### 1. Data Loading
+The dataset is loaded using **Pandas**.
 
-Train/Test Split: 80% / 20%
+### 2. Text Preprocessing
+Text data is cleaned and prepared for processing.
 
-Dataset Size: ~20k sentences (if using Kaggle dataset)
+### 3. Feature Extraction
+Text is converted into numerical features using **TF-IDF vectorization**.
 
-Evaluation Metric: Accuracy Score
+### 4. Model Training
+A **Multinomial Naive Bayes classifier** is trained on the dataset.
 
-Results
+### 5. Prediction
+The trained model predicts the emotion of new text input.
 
-Example model performance:
+---
 
-Training Step	Accuracy
-Initial Training	~60%
-After preprocessing improvements	~80–90%
+## Technologies Used
 
-Example predictions
+Programming Language:
 
-Input
+- Python
 
+Libraries:
+
+- Pandas
+- Scikit-learn
+- NumPy
+
+Machine Learning Algorithm:
+
+- Multinomial Naive Bayes
+
+Text Processing Method:
+
+- TF-IDF Vectorization
+
+---
+
+## Example Output
+
+Example 1
+
+Input:
 I feel very happy today
 
-Prediction
-
-joy
-
-Input
-
-I am very sad and lonely
-
-Prediction
-
-sadness
-Requirements
-
-Python 3.8+
-
-Required libraries:
-
-pandas
-
-scikit-learn
-
-numpy
-
-Install dependencies
-
-pip install -r requirements.txt
-Usage
-
-Run the training script
-
-python train_model.py
-
-The script will:
-
-Load the emotion dataset
-
-Convert text into TF-IDF features
-
-Train the machine learning model
-
-Evaluate accuracy
-
-Save the trained model as emotion_model.pkl
-
-Run the prediction script
-
-python emotion_model.py
-
-The program will allow users to enter text and receive predicted emotion.
-
-Example:
-
-Enter text: I feel amazing today
+Output:
 Predicted Emotion: joy
-GPU Support
 
-This project runs on CPU since the model is a lightweight machine learning classifier.
-No GPU is required.
+Example 2
 
-Project Structure
-.
-├── train_model.py        # Model training script
-├── emotion_model.py      # Emotion prediction script
+Input:
+I am feeling very sad
+
+Output:
+Predicted Emotion: sadness
+
+---
+
+## Model Performance
+
+Approximate model accuracy:
+Accuracy ≈ 71%
+
+The performance may vary depending on:
+
+- dataset size
+- preprocessing methods
+- training parameters
+
+---
+
+## Project Structure
+
+```
+AI-Emotion-Recognition-from-Text
+│
+├── train_model.py        # Script to train the emotion classification model
+├── emotion_model.py      # Script to predict emotions from user input
 ├── train.txt             # Training dataset
 ├── test.txt              # Testing dataset
 ├── val.txt               # Validation dataset
 ├── requirements.txt      # Python dependencies
-├── presentation.pptx     # Project presentation slides
-└── README.md             # Project documentation
+├── emotion_model.pkl     # Saved trained model
+├── vectorizer.pkl        # Saved TF-IDF vectorizer
+├── README.md             # Project documentation
+└── presentation.pptx     # Project presentation slides
+```
+
+---
+
+## Installation
+
+Clone the repository:
+git clone https://github.com/Shanvi587/AI-Emotion-Recognition-from-Text.git
+
+Navigate to the project directory:
+cd AI-Emotion-Recognition-from-Text
+
+Install dependencies:
+pip install -r requirements.txt
+
+---
+
+## Running the Project
+
+Train the model:
+python train_model.py
+
+Run emotion prediction:
+python emotion_model.py
+
+Example:
+Enter text: I feel amazing today
+Predicted Emotion: joy
+
+---
+
+## Future Improvements
+
+Possible improvements include:
+
+- Using **Deep Learning models such as LSTM or BERT**
+- Increasing dataset size
+- Building a **web interface using Flask**
+- Deploying the system as an API
+
+---
+
+## References
+
+1. Scikit-learn Documentation  
+https://scikit-learn.org
+
+2. Natural Language Processing Resources  
+https://www.nltk.org
+
+3. Emotion Dataset for NLP  
+https://www.kaggle.com/datasets/praveengovi/emotions-dataset-for-nlp
+
+4. TF-IDF Explanation  
+https://en.wikipedia.org/wiki/Tf%E2%80%93idf
+
+---
+
+## License
+
+This project is developed for **educational and academic purposes**.
