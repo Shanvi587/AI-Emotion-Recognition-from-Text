@@ -2,7 +2,7 @@
 
 ## Author
 **Shanvi Tripathi**  
-B.Tech – Artificial Intelligence & Machine Learning  
+B.Tech – CSE (Artificial Intelligence & Machine Learning) 
 Email - shanvitripathi023@gmail.com
 
 ---
