@@ -3,7 +3,7 @@
 ## Author
 **Shanvi Tripathi**  
 B.Tech – Artificial Intelligence & Machine Learning  
-GitHub: https://github.com/Shanvi587  
+Email - shanvitripathi023@gmail.com
 
 ---
 
